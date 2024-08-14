@@ -1,3 +1,5 @@
+"use server"
+
 import {cookies} from 'next/headers';
 
 
@@ -15,7 +17,8 @@ export const getUserData = async (path = "") => {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+      const body = await response.json()
+      throw new Error(`HTTP error! Status: ${response.status} - ${body}`);
     }
 
     return await response.json();

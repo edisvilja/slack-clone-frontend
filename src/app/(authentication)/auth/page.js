@@ -1,6 +1,6 @@
 "use client"
 
-import { useToast } from "@/components/ui/use-toast"
+import { toast } from 'sonner'
 import { buttonVariants } from "@/components/ui/button"
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
@@ -20,7 +20,6 @@ import { cn } from "@/lib/utils";
 export default function Auth() {
 
   const [isAuthenticating, setIsAuthenticating] = useState(false)
-  const { toast } = useToast()
 
   const formSchema = z.object({
     email: z.string().email()

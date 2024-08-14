@@ -11,7 +11,17 @@ const nextConfig = {
         destination: 'http://localhost:3001/auth/:path*' // Proxy to Backend
       }
     ]
-  }
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'utfs.io',
+        port: '',
+        pathname: '/f/**',
+      },
+    ],
+  },
 }
 
 export default nextConfig;
