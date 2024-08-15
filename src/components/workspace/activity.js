@@ -1,5 +1,10 @@
+import ResizableLayout from './resizable-layout'
+
 const ActivityView = () => {
-  return <div className="activity-view">Activity View</div>
+  const sidebarContent = <div className="sidebar-content">Activity Sidebar</div>
+  const mainContent = <div className="main-content">Activity Content</div>
+
+  return <ResizableLayout sidebar={sidebarContent} content={mainContent} />
 }
 
 export default ActivityView

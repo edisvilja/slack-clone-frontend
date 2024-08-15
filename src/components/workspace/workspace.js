@@ -7,11 +7,7 @@ const Workspace = () => {
   const { currentWorkspace } = useAppState()
 
   if (!currentWorkspace) {
-    return (
-      <div className="workspace-loading | flex h-screen items-center justify-center | bg-gray-800 text-white">
-        Loading
-      </div>
-    )
+    return <div className="workspace-loading | flex h-screen items-center justify-center | bg-gray-800 text-white">Loading</div>
   }
 
   return (

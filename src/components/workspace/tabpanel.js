@@ -7,7 +7,9 @@ import { useAppState } from '@/providers/app-provider'
 const TabPanel = () => {
   const { currentTab } = useAppState()
 
-  const MyTabPanel = ({ children }) => <div className="tab-panel | flex-1 | bg-gray-100 | p-4">{children}</div>
+  const MyTabPanel = ({ children }) => (
+    <div className="tab-panel | flex-1 | bg-gray-100 dark:bg-gray-900 dark:text-white | p-4">{children}</div>
+  )
 
   switch (currentTab) {
     case 'home':

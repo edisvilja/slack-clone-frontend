@@ -1,12 +1,14 @@
 import WebSocketProvider from '@/providers/ws-provider'
-
-const { AppStateProvider } = require('@/providers/app-provider')
+import { ThemeProvider } from 'next-themes'
+import { AppStateProvider } from '@/providers/app-provider'
 
 const MainLayout = ({ children }) => {
   return (
-    <AppStateProvider>
-      <WebSocketProvider>{children}</WebSocketProvider>
-    </AppStateProvider>
+    <ThemeProvider attribute="class">
+      <AppStateProvider>
+        <WebSocketProvider>{children}</WebSocketProvider>
+      </AppStateProvider>
+    </ThemeProvider>
   )
 }
 
