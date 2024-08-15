@@ -1,13 +1,11 @@
-import WebSocketProvider from "@/providers/ws-provider"
+import WebSocketProvider from '@/providers/ws-provider'
 
-const { AppStateProvider } = require("@/providers/app-provider")
+const { AppStateProvider } = require('@/providers/app-provider')
 
-const MainLayout = ({children}) => {
+const MainLayout = ({ children }) => {
   return (
     <AppStateProvider>
-      <WebSocketProvider>
-        {children}
-      </WebSocketProvider>
+      <WebSocketProvider>{children}</WebSocketProvider>
     </AppStateProvider>
   )
 }

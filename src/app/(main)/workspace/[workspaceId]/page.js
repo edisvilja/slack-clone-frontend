@@ -1,18 +1,19 @@
-"use client"
+'use client'
 
-import { useAppState } from "@/providers/app-provider"
-import { useEffect } from "react";
+import Workspace from '@/components/workspace/workspace'
+import { useAppState } from '@/providers/app-provider'
+import { useEffect } from 'react'
 
-const Workspace = ({params: { workspaceId }}) => {
+const WorkspacePage = ({ params: { workspaceId } }) => {
   const { currentWorkspace, setCurrentWorkspace } = useAppState()
-  
+
   useEffect(() => {
     if (currentWorkspace !== workspaceId) {
-      setCurrentWorkspace(workspaceId);
+      setCurrentWorkspace(workspaceId)
     }
-  }, [workspaceId]);
+  }, [workspaceId])
 
-  return (<>{currentWorkspace}</>)
+  return <Workspace></Workspace>
 }
 
-export default Workspace
+export default WorkspacePage
