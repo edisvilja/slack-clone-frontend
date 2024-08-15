@@ -5,7 +5,7 @@ import "@uploadthing/react/styles.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Lask",
+  title: "slackoid",
   description: "A slack clone",
 };
 
