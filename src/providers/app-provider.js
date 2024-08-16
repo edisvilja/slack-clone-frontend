@@ -7,6 +7,7 @@ const AppStateContext = createContext()
 export const useAppState = () => useContext(AppStateContext)
 
 export const AppStateProvider = ({ children }) => {
+  const [user, setUser] = useState(null)
   const [workspaces, setWorkspaces] = useState([])
   const [currentWorkspace, setCurrentWorkspace] = useState(null)
   const [currentTab, setCurrentTab] = useState('home')
@@ -40,6 +41,8 @@ export const AppStateProvider = ({ children }) => {
   return (
     <AppStateContext.Provider
       value={{
+        user,
+        setUser,
         workspaces,
         setWorkspaces,
         currentWorkspace,

@@ -72,12 +72,15 @@ const ResizableLayout = ({ sidebar, content }) => {
   }, [sidebarWidth])
 
   return (
-    <div ref={containerRef} className="flex h-full bg-gray-100 rounded-lg shadow-md">
-      <div className="p-4 dark:bg-gray-800 rounded-l-lg shadow-md" style={{ width: `${sidebarWidth}px` }}>
+    <div
+      ref={containerRef}
+      className="resizable-panel | flex h-full | bg-gray-100 rounded-lg shadow-md border-4 dark:border-gray-800"
+    >
+      <div className="sidebar | p-4 dark:bg-gray-900 rounded-l-lg shadow-md" style={{ width: `${sidebarWidth}px` }}>
         {sidebar}
       </div>
-      <div ref={resizerRef} className="dark:bg-gray-900 cursor-col-resize w-2" style={{ height: '100%' }} />
-      <div className="flex-1 p-4 dark:bg-gray-800 rounded-r-lg shadow-md">{content}</div>
+      <div ref={resizerRef} className="resizer | w-1 h-full | dark:bg-gray-800 cursor-col-resize" />
+      <div className="content | flex-1 p-4 dark:bg-gray-900 rounded-r-lg shadow-md">{content}</div>
     </div>
   )
 }

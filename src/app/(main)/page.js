@@ -8,11 +8,9 @@ export default async function Home() {
     return redirect('/auth')
   }
 
-  const workspaces = await getUserData('workspaces')
-
-  if (workspaces.length < 1) {
+  if (userData.workspaces.length < 1) {
     return redirect('/create-workspace')
   }
 
-  return redirect('/workspace/' + workspaces[0]._id)
+  return redirect('/workspace/' + userData.workspaces[0]._id)
 }

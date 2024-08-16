@@ -1,5 +1,6 @@
 import { useAppState } from '@/providers/app-provider'
 import React from 'react'
+import { FaHome } from 'react-icons/fa'
 
 const TabRail = () => {
   const { workspaces, currentWorkspace, setCurrentWorkspace, currentTab, setCurrentTab } = useAppState()
@@ -13,7 +14,7 @@ const TabRail = () => {
       <div className="workspace-switcher">
         <select className="w-full bg-gray-900" value={currentWorkspace} onChange={e => setCurrentWorkspace(e.target.value)}>
           {workspaces.map(ws => (
-            <option key={ws.id} value={ws.id}>
+            <option key={ws._id} value={ws.id}>
               {ws.name}
             </option>
           ))}
